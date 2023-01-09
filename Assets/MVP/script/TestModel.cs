@@ -1,8 +1,8 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UniRx;
 
 /// <summary>
-/// ƒqƒbƒgƒ|ƒCƒ“ƒg‚Ì’l‚ğ‚Á‚Ä‚¢‚éƒNƒ‰ƒX
+/// ãƒ’ãƒƒãƒˆãƒã‚¤ãƒ³ãƒˆã®å€¤ã‚’æŒã£ã¦ã„ã‚‹ã‚¯ãƒ©ã‚¹
 /// </summary>
 public class TestModel : MonoBehaviour
 {
@@ -19,7 +19,7 @@ public class TestModel : MonoBehaviour
     }
 
     /// <summary>
-    /// health‚Ì’l‚ªŒ¸­‚·‚éB
+    /// healthã®å€¤ãŒæ¸›å°‘ã™ã‚‹ã€‚
     /// </summary>
     public void OnDamage()
     {
@@ -27,7 +27,7 @@ public class TestModel : MonoBehaviour
     }
 
     /// <summary>
-    /// health‚Ì’l‚ğƒŠƒZƒbƒg‚·‚éB
+    /// healthã®å€¤ã‚’ãƒªã‚»ãƒƒãƒˆã™ã‚‹ã€‚
     /// </summary>
     public void OnReset()
     {

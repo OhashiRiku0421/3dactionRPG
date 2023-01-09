@@ -1,17 +1,17 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 
 /// <summary>
-/// model‚É‚ ‚éƒqƒbƒgƒ|ƒCƒ“ƒg‚Ì’l‚ª•ÏX‚³‚ê‚½‚Æ‚«presenter‚ğŒo—R‚µ‚ÄUI‚É”½‰f‚·‚éB
+/// modelã«ã‚ã‚‹ãƒ’ãƒƒãƒˆãƒã‚¤ãƒ³ãƒˆã®å€¤ãŒå¤‰æ›´ã•ã‚ŒãŸã¨ãpresenterã‚’çµŒç”±ã—ã¦UIã«åæ˜ ã™ã‚‹ã€‚
 /// </summary>
 public class TestView : MonoBehaviour
 {
-    [SerializeField, Tooltip("ƒqƒbƒgƒ|ƒCƒ“ƒg‚ÌƒXƒ‰ƒCƒ_[")]
+    [SerializeField, Tooltip("ãƒ’ãƒƒãƒˆãƒã‚¤ãƒ³ãƒˆã®ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼")]
     private Slider _slider;
 
     /// <summary>
-    /// ƒXƒ‰ƒCƒ_[‚ÌÅ‘å’l‚ğİ’è
+    /// ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã®æœ€å¤§å€¤ã‚’è¨­å®š
     /// </summary>
     public void Init(int maxHealth)
     {
@@ -19,7 +19,7 @@ public class TestView : MonoBehaviour
     }
 
     /// <summary>
-    /// ƒqƒbƒgƒ|ƒCƒ“ƒg‚Ì’l‚ğƒXƒ‰ƒCƒ_[‚É”½‰f
+    /// ãƒ’ãƒƒãƒˆãƒã‚¤ãƒ³ãƒˆã®å€¤ã‚’ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã«åæ˜ 
     /// </summary>
     public void HealthSlider(float value)
     {

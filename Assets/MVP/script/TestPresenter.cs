@@ -1,8 +1,8 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UniRx;
 
 /// <summary>
-/// model‚Ìƒqƒbƒgƒ|ƒCƒ“ƒg‚ª•ÏX‚³‚ê‚½‚Æ‚«view‚É’Ê’m‚·‚éB
+/// modelã®ãƒ’ãƒƒãƒˆãƒã‚¤ãƒ³ãƒˆãŒå¤‰æ›´ã•ã‚ŒãŸã¨ãviewã«é€šçŸ¥ã™ã‚‹ã€‚
 /// </summary>
 public class TestPresenter : MonoBehaviour
 {
@@ -18,7 +18,7 @@ public class TestPresenter : MonoBehaviour
     }
 
     /// <summary>
-    /// ƒqƒbƒgƒ|ƒCƒ“ƒg‚ÌŠÄ‹‚ğ‚µA•ÏX‚³‚ê‚½‚ç’Ê’m‚·‚éB
+    /// ãƒ’ãƒƒãƒˆãƒã‚¤ãƒ³ãƒˆã®ç›£è¦–ã‚’ã—ã€å¤‰æ›´ã•ã‚ŒãŸã‚‰é€šçŸ¥ã™ã‚‹ã€‚
     /// </summary>
     private void Presenter()
     {
@@ -26,8 +26,8 @@ public class TestPresenter : MonoBehaviour
             .Skip(1)
             .Subscribe(x => {
                 _testView.HealthSlider(x);
-                Debug.Log($"c‚è{x}");
+                Debug.Log($"æ®‹ã‚Š{x}");
             })
-            .AddTo(this);//ŠÄ‹‚ğI—¹
+            .AddTo(this);//ç›£è¦–ã‚’çµ‚äº†
     }
 }
