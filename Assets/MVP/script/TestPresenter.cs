@@ -23,7 +23,7 @@ public class TestPresenter : MonoBehaviour
     private void Presenter()
     {
         _testModel.Health
-            .Skip(1)
+            .Skip(1)//初期化をスキップ
             .Subscribe(x => {
                 _testView.HealthSlider(x);
                 Debug.Log($"残り{x}");
