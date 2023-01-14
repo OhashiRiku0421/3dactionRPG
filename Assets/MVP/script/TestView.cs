@@ -23,10 +23,7 @@ public class TestView : MonoBehaviour
     /// </summary>
     public void HealthSlider(float value)
     {
-        DOTween.To(() => _slider.value,
-                x => _slider.value = x,
-                value,
-                1f);
+        _slider.value = value;
     }
 
 }
