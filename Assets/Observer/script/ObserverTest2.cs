@@ -1,17 +1,20 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UniRx;
 
+/// <summary>
+/// サブジェクトを監視するオブザーバークラス
+/// </summary>
 public class ObserverTest2 : MonoBehaviour
 {
-    [SerializeField, Tooltip("�T�u�W�F�N�g")] 
+    [SerializeField, Tooltip("サブジェクト")] 
     private SubjectTest _subject;
 
     private void Start()
     {
-        //�Ď�
+        //監視
         _subject.Health
             .Skip(1)
-            .Subscribe(x => Debug.Log($"�c��{x}"))
-            .AddTo(this);//�Ď��I��
+            .Subscribe(x => Debug.Log($"残り{x}"))
+            .AddTo(this);//監視終了
     }
 }
