@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
 
 /// <summary>
 /// modelにあるヒットポイントの値が変更されたときpresenterを経由してUIに反映する。
