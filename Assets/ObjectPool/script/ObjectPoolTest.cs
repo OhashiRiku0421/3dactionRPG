@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObjectPoolTest : MonoBehaviour
 {
-    Stack<PoolObject> _stack = new();
+    List<PoolObject> _list = new();
     [SerializeField, Tooltip("プールサイズ")]
     int _poolSize = 100;
     [SerializeField]
@@ -14,11 +14,19 @@ public class ObjectPoolTest : MonoBehaviour
     {
         PoolObject poolObjeck = null;
         //Poolのサイズ分オブジェクトを生成
-        for(int i = 0; i < _poolSize; i++)
+        for (int i = 0; i < _poolSize; i++)
         {
             poolObjeck = Instantiate(_poolObject);
             poolObjeck.gameObject.SetActive(false);
-            _stack.Push(poolObjeck);
+            _list.Add(poolObjeck);
+        }
+    }
+
+    void Update()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            PoolPop(transform).PopInterval(this);
         }
     }
 
@@ -27,19 +35,24 @@ public class ObjectPoolTest : MonoBehaviour
     /// </summary>
     public PoolObject PoolPop(Transform gunTransform)
     {
-        //スタックの数が0以下の時以下を実行する。
-        if(_stack.Count <= 0)
+        
+
+        foreach (var pool in _list)
         {
-            PoolObject poolObjeck = Instantiate(_poolObject);
-            poolObjeck.gameObject.SetActive(false);
-            _stack.Push(poolObjeck);
-            return poolObjeck;
+            if (pool.gameObject.activeSelf == false)
+            {
+                pool.gameObject.SetActive(true);
+                gunTransform = pool.gameObject.transform;
+                return pool;
+            }
+
         }
 
-        PoolObject poolObject = _stack.Pop();
-        poolObject.gameObject.SetActive(true);
-        gunTransform = poolObject.gameObject.transform;
-        return poolObject;
+        //Poolが空な時に実行される。
+        PoolObject poolObjeck = Instantiate(_poolObject);
+        poolObjeck.gameObject.SetActive(false);
+        _list.Add(poolObjeck);
+        return poolObjeck;
     }
 
     /// <summary>
@@ -48,6 +61,5 @@ public class ObjectPoolTest : MonoBehaviour
     public void PoolPush(PoolObject poolObject)
     {
         poolObject.gameObject.SetActive(false);
-        _stack.Push(poolObject);
     }
 }
