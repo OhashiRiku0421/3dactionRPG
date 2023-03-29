@@ -5,6 +5,7 @@ using UnityEngine;
 public class ObjectPoolTest : MonoBehaviour
 {
     List<PoolObject> _list = new();
+
     [SerializeField, Tooltip("プールサイズ")]
     int _poolSize = 100;
     [SerializeField]
