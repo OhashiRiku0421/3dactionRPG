@@ -7,9 +7,15 @@ public class StateMachine
 
     private AttackState _attack;
 
+    public AttackState Attack => _attack;
+
     private MoveState _move;
 
+    public MoveState Move => _move;
+
     private IdelState _idle;
+
+    public IdelState Idel => _idle;
 
     private event Action<IState> _stateChanged;
 
@@ -23,7 +29,7 @@ public class StateMachine
     /// <summary>
     /// ‰Šú‰»
     /// </summary>
-    private void Init(IState state)
+    public void Init(IState state)
     {
         _state = state;
         state.Enter();
