@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MoveState : IState
@@ -22,6 +20,11 @@ public class MoveState : IState
         if (Input.GetKey(KeyCode.Space))
         {
             _player.StateMachine.Change(_player.StateMachine.Attack);
+        }
+
+        if(!Input.GetKey(KeyCode.Return))
+        {
+            _player.StateMachine.Change(_player.StateMachine.Idel);
         }
     }
 

@@ -21,10 +21,11 @@ public class IdelState : IState
 
     public void Update()
     {
-        if (Input.GetKey(KeyCode.KeypadEnter))
+        if (Input.GetKey(KeyCode.Return))
         {
             _player.StateMachine.Change(_player.StateMachine.Move);
         }
+
         if(Input.GetKey(KeyCode.Space))
         {
             _player.StateMachine.Change(_player.StateMachine.Attack);
